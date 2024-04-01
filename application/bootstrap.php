@@ -154,3 +154,9 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
+Route::set('user/invoice', 'user/invoice')
+    ->defaults(array(
+        'controller' => 'User',
+        'action'     => 'invoice',
+    ));
+

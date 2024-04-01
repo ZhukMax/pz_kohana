@@ -1,19 +1,22 @@
-# Kohana PHP Framework
+### Stack:
+* PHP 5.6
+* PHP framework: Kohana 3.3
+* MySQL 5.7
+* NGINX
+### Task:
+Need to make a web page with an authorization form.([login.php](application%2Fviews%2Fauth%2Flogin.php), [Auth.php](application%2Fclasses%2FController%2FAuth.php))
 
-[Kohana](http://kohanaframework.org/) is an elegant, open source, and object oriented HMVC framework built using PHP5, by a team of volunteers. It aims to be swift, secure, and small.
+There must be two users in the database: admin and user ([init.sql](init.sql), models: [Model_PaymentSystem.php](application%2Fclasses%2FModel%2FModel_PaymentSystem.php), [Model_Custom_User.php](application%2Fclasses%2FModel%2FCustom%2FModel_Custom_User.php), [Model_PaymentInvoice.php](application%2Fclasses%2FModel%2FModel_PaymentInvoice.php) ). Each user has their own section.
+#### Section for user:
+form for creating a payment invoice: select payment system, filling in payment details and amount table with list of the payment invoices
 
-Released under a [BSD license](http://kohanaframework.org/license), Kohana can be used legally for any open source, commercial, or personal project.
+[invoice.php](application%2Fviews%2Fuser%2Finvoice.php), [User.php](application%2Fclasses%2FController%2FUser.php)
+#### Section for admin:
+table with list of the payment invoices, the admin can cancel or approve each invoice, also admin can download invoice in pdf format (custom html layout) table with list of the payment systems
+form with creating and edititng payment system, if payment system is off, then user cant create payment invoice
+#### Payment invoice statuses:
+* creating
+* approved
+* cancelled
 
-## Documentation
-Kohana's documentation can be found at <http://kohanaframework.org/documentation> which also contains an API browser.
-
-The `userguide` module included in all Kohana releases also allows you to view the documentation locally. Once the `userguide` module is enabled in the bootstrap, it is accessible from your site via `/index.php/guide` (or just `/guide` if you are rewriting your URLs).
-
-## Reporting bugs
-If you've stumbled across a bug, please help us out by [reporting the bug](http://dev.kohanaframework.org/projects/kohana3/) you have found. Simply log in or register and submit a new issue, leaving as much information about the bug as possible, e.g.
-
-* Steps to reproduce
-* Expected result
-* Actual result
-
-This will help us to fix the bug as quickly as possible, and if you'd like to fix it yourself feel free to [fork us on GitHub](https://github.com/kohana) and submit a pull request!
+All forms should only be submitted with JQuery Ajax, except for downloading.

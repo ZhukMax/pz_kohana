@@ -159,4 +159,33 @@ Route::set('user/invoice', 'user/invoice')
         'controller' => 'User',
         'action'     => 'invoice',
     ));
-
+Route::set('admin/invoices', 'admin/invoices')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'invoices',
+    ));
+Route::set('admin/update_invoice', 'admin/update_invoice/<id>/<status>')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'update_invoice',
+    ));
+Route::set('admin/download_invoice', 'admin/download_invoice/<id>')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'download_invoice',
+    ));
+Route::set('admin/payment_systems', 'admin/payment_systems')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'payment_systems',
+    ));
+Route::set('admin/create_payment_system', 'admin/create_payment_system')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'create_payment_system',
+    ));
+Route::set('admin/edit_payment_system', 'admin/edit_payment_system/<id>')
+    ->defaults(array(
+        'controller' => 'Admin',
+        'action'     => 'edit_payment_system',
+    ));

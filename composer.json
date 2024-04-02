@@ -1,6 +1,7 @@
 {
 	"require": {
-		"phpunit/phpunit": "3.7.24 - 4",
-		"phing/phing": "dev-master"
+		"phpunit/phpunit": "3.7.24",
+		"tecnickcom/tcpdf": "^6.7",
+		"phing/phing": "^2.17"
 	}
 }

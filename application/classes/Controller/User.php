@@ -4,6 +4,9 @@ class Controller_User extends Controller_Template {
 
     public $template = 'template';
 
+    /**
+     * @throws HTTP_Exception
+     */
     public function before() {
         parent::before();
 
@@ -12,11 +15,14 @@ class Controller_User extends Controller_Template {
         }
     }
 
+    /**
+     * @throws Kohana_Exception
+     */
     public function action_invoice() {
         $user = Auth::instance()->get_user();
-        $payment_systems = ORM::factory('PaymentSystem')->find_all();
+        $payment_systems = ORM::factory('PaymentSystem')->where('is_active', '=', 1)->find_all();
 
-        if ($this->request->method() == HTTP_Request::POST) {
+        if ($this->request->method() == Kohana_HTTP_Request::POST) {
             // Process the form submission
             $invoice = ORM::factory('PaymentInvoice');
             $invoice->user_id = $user->id;

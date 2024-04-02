@@ -12,8 +12,14 @@ form for creating a payment invoice: select payment system, filling in payment d
 
 [invoice.php](application%2Fviews%2Fuser%2Finvoice.php), [User.php](application%2Fclasses%2FController%2FUser.php)
 #### Section for admin:
-table with list of the payment invoices, the admin can cancel or approve each invoice, also admin can download invoice in pdf format (custom html layout) table with list of the payment systems
-form with creating and edititng payment system, if payment system is off, then user cant create payment invoice
+table with list of the payment invoices, the admin can cancel or approve each invoice, also admin can download invoice in pdf format (custom html layout)
+([Admin.php](application%2Fclasses%2FController%2FAdmin.php), [invoices.php](application%2Fviews%2Fadmin%2Finvoices.php), [invoice_pdf.php](application%2Fviews%2Fadmin%2Finvoice_pdf.php))
+
+table with list of the payment systems form with creating and edititng payment system, if payment system is off, then user cant create payment invoice
+([Admin.php](application%2Fclasses%2FController%2FAdmin.php), 
+[payment_systems.php](application%2Fviews%2Fadmin%2Fpayment_systems.php), 
+[create_payment_system.php](application%2Fviews%2Fadmin%2Fcreate_payment_system.php),
+[edit_payment_system.php](application%2Fviews%2Fadmin%2Fedit_payment_system.php))
 #### Payment invoice statuses:
 * creating
 * approved
